@@ -2,3 +2,48 @@
     box-sizing: border-box;
     border: 1px solid red;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+li {
+    list-style: none;
+    padding: 0px 10px;
+}
+
+.game_tiles{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    height: 200px;
+}
+
+.game img{
+    width: 300px;
+    object-fit: cover;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+}
+
