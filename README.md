@@ -18,6 +18,9 @@
 ### Trello Board:
 ![TrelloBoard](https://i.imgur.com/wGO18Z6.png)
 
+### Wire Frame Diagram:
+![Wireframe](https://i.imgur.com/lhgoBFT.png))
+
 ## Check List :chart:
 - README & Wireframe/planning 
 - Working webapp using CRUD SQL commands with local DB
