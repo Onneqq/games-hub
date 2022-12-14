@@ -1,8 +1,9 @@
-     
+require 'dotenv/load'
 require 'sinatra'
 require 'pg'
 require 'bcrypt'
 require './db/db'
+require 'httparty'
 
 enable :sessions
 

@@ -2,10 +2,14 @@ GEM
   remote: https://rubygems.org/
   specs:
     bcrypt (3.1.18)
+    dotenv (2.8.1)
     htmlbeautifier (1.4.2)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.5.8)
     pg (1.4.5)
+    puma (6.0.0)
+      nio4r (~> 2.0)
     rack (2.2.4)
     rack-protection (3.0.4)
       rack
@@ -22,8 +26,10 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  dotenv
   htmlbeautifier
   pg
+  puma
   sinatra
 
 BUNDLED WITH
