@@ -1,0 +1,57 @@
+get '/' do
+    games = all_games()
+
+    erb :index, locals: {
+      games: games
+    }
+end
+
+# get '/new' do
+#     erb :'/games/new'
+# end
+
+get '/games/new' do
+    erb :'games/new'
+end
+
+post '/games' do
+    name = params['name']
+    image_url = params['image_url']
+    game_description = params['game_description']
+    genre = params['genre']
+    review_score = params['review_score']
+
+    create_game(name, image_url, game_description, genre, review_score)
+
+    redirect '/'
+end
+
+get '/games/:id/edit' do
+    id = params['id']
+    game = get_game(id)
+  
+    erb :'/games/edit', locals: {
+      game: game
+    }
+end
+
+put '/games/:id' do
+    id = params['id']
+    name = params['name']
+    image_url = params['image_url']
+    game_description = params['game_description']
+    genre = params['genre']
+    review_score = params['review_score']
+
+    update_game(id, name, image_url, game_description, genre, review_score)
+  
+    redirect '/'
+end
+
+delete '/games/:id' do
+    id = params['id']
+
+    delete_game(id)
+
+    redirect '/'
+end
