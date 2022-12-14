@@ -1,7 +1,7 @@
      
 require 'sinatra'
 require 'pg'
-require 'BCrypt'
+require 'bcrypt'
 require './db/db'
 
 require './models/game'

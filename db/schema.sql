@@ -21,3 +21,5 @@ CREATE TABLE users(
   username TEXT,
   email TEXT
 );
+
+ALTER TABLE users ADD COLUMN password_digest TEXT;
