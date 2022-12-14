@@ -6,6 +6,9 @@
 body {
     display: flex;
     flex-direction: column;
+    font-family: 'Questrial', sans-serif;
+    color: white;
+    background-color: black;
 }
 
 header {
@@ -31,19 +34,64 @@ li {
 
 .game_tiles{
     display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
-    height: 200px;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-top: 1.5rem;
+}
+
+a,
+button {
+    border: 1px solid black;
+    padding: 0.25rem, 0.5rem;
+    background-color: blueviolet;
+    color: white;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.game header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: black;
+    color: white;
+}
+
+.food h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .game img{
-    width: 300px;
+    width: 100%;
     object-fit: cover;
+    height: 230px;
+}
+
+.controls {
+    display: flex;
+    gap: 0.5rem;
 }
 
 footer {
     position: fixed;
     bottom: 0;
     background-color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Zen Dots', cursive;
+}
+
+h2 {
+
 }
 

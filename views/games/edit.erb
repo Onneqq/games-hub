@@ -1,0 +1,15 @@
+<h1>Edit Game</h1>
+<form action="/games/<%= game['id'] %>" method="POST">
+  <input type="hidden" name="_method" value="put">
+  <label for="">Name: </label>
+  <input type="text" name="name" value="<%= game['name'] %>">
+  <label for="">Image URL: </label>
+  <input type="text" name="image_url" value="<%= game['image_url'] %>">
+  <label for="">Game description: </label>
+  <input type="text" name="game_description" value="<%= game['game_description'] %>">
+  <label for="">Genre: </label>
+  <input type="text" name="genre" value="<%= game['genre'] %>">
+  <label for="">Review Score: </label>
+  <input type="number" name="review_score" value="<%= game['review_score'] %>">
+  <button>Update Game</button>
+</form>
