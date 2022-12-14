@@ -1,20 +1,59 @@
 <body>
   <header>
     <h1>Games Hub</h1>
+    <% if logged_in? %>
+      <nav>
+        <ul>
+          <li><a href="/index">Home</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+          <li>
+            <form action="/sessions" method="POST">
+              <input type="hidden" name="_method" value="delete">
+              <button>Log Out</button>
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Popular Games</h2>
+      <form action="/games/new">
+        <button>Add new game</button>
+      </form>
+      <div class="game_tiles">
+        <%# will need to loop here for each item in db %>
+        <%# each will have poster and basic details - title will open more details %>
+        <% games.each do |game| %>
+          <div class="game">
+            <header>
+              <h2><%= game['name'] %></h2>
+              <section class="controls">
+                <a href="/games/<%= game['id'] %>/edit">Edit</a>
+                <form action="/games/<%= game['id'] %>" method="POST">
+                  <input type="hidden" name="_method" value="delete">
+                  <button>Delete</button>
+                </form>
+              </section>
+            </header>
+            <img src="<%= game['image_url'] %>" alt="">
+          </div>
+        <% end %>
+      </div>
+    </main>
+  <% else %>
+    <%# not logged in: %>
+    <h2>Log in to like your favourite game!</h2>
     <nav>
       <ul>
         <li><a href="/index">Home</a></li>
-        <li><a href="/profile">Profile</a></li>
-        <li><a href="/reviews">Reviews</a></li>
         <li><a href="/users/new">Sign Up</a></li>
+        <li><a href="/sessions/new">Log In</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <h2>Popular Games</h2>
-    <form action="/games/new">
-      <button>Add new game</button>
-    </form>
     <div class="game_tiles">
       <%# will need to loop here for each item in db %>
       <%# each will have poster and basic details - title will open more details %>
@@ -22,20 +61,12 @@
         <div class="game">
           <header>
             <h2><%= game['name'] %></h2>
-            <section class="controls">
-              <a href="/games/<%= game['id'] %>/edit">Edit</a>
-              <form action="/games/<%= game['id'] %>" method="POST">
-                <input type="hidden" name="_method" value="delete">
-                <button>Delete</button>
-              </form>
-            </section>
           </header>
           <img src="<%= game['image_url'] %>" alt="">
         </div>
       <% end %>
-    </div>
-  </main>
-  <footer>
-    <a href="https://github.com/Onneqq">GitHub</a>
-  </footer>
-</body>
+    <% end %>
+    <footer>
+      <a href="https://github.com/Onneqq">GitHub</a>
+    </footer>
+  </body>

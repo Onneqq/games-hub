@@ -11,10 +11,16 @@ end
 # end
 
 get '/games/new' do
+    if !logged_in?
+        redirect '/'
+    end
     erb :'games/new'
 end
 
 post '/games' do
+    if !logged_in?
+        redirect '/'
+    end
     name = params['name']
     image_url = params['image_url']
     game_description = params['game_description']
@@ -27,6 +33,9 @@ post '/games' do
 end
 
 get '/games/:id/edit' do
+    if !logged_in?
+        redirect '/'
+    end
     id = params['id']
     game = get_game(id)
   
@@ -36,6 +45,9 @@ get '/games/:id/edit' do
 end
 
 put '/games/:id' do
+    if !logged_in?
+        redirect '/'
+    end
     id = params['id']
     name = params['name']
     image_url = params['image_url']
@@ -49,6 +61,9 @@ put '/games/:id' do
 end
 
 delete '/games/:id' do
+    if !logged_in?
+        redirect '/'
+    end
     id = params['id']
 
     delete_game(id)
