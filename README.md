@@ -1,5 +1,5 @@
 # Games Hub :space_invader:
-[Future Link (Once Deployed)](url)
+[Click Link to View!](https://game-hub.fly.dev/)
 
 ## About :book:
 - Hub for searching for information on games. 
