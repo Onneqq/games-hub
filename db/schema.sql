@@ -45,3 +45,10 @@ UNIQUE(user_id, game_id);
   GROUP BY game_id
   ORDER BY number_of_likes DESC;
 
+
+CREATE TABLE reviews(
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER,
+  game_id INTEGER,
+  review TEXT
+);

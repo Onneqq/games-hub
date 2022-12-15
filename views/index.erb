@@ -18,8 +18,8 @@
     </header>
     <main>
       <h2>Most Popular Games</h2>
-      <form action="/games/new">
-        <button>Add new game</button>
+      <form class="addgame" action="/games/new">
+        <button style="width: 100px; float: left;">Add Game</button>
       </form>
       <div class="game_tiles">
         <%# will need to loop here for each item in db %>
@@ -35,13 +35,13 @@
                   <input type="hidden" name="_method" value="delete">
                   <button>Delete</button>
                 </form>
+                <form action="/games/<%= game['id'] %>/likes" method="POST">
+                  <button>Like</button>
+                </form>
+                <a href="/reviews/<%= game['id'] %>/reviews">Reviews</a>
               </section>
             </header>
             <img src="<%= game['image_url'] %>" alt="">
-            <form action="/games/<%= game['id'] %>/likes" method="POST">
-              <button>Like</button>
-            </form>
-            <a href="/reviews/<%= game['id'] %>/reviews">Reviews</a>
           </div>
         <% end %>
       </div>

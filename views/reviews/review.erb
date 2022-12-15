@@ -1,0 +1,7 @@
+<h1><%= game[0]['name'] %> Reviews</h1>
+<form action="/reviews/<%= gameid %>/new">
+  <button>Add a review!</button>
+</form>
+<% reviews.each do |i| %>
+  <p> <%= i['review'] %> </p>
+<% end %>
