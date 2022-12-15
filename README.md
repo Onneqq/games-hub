@@ -22,9 +22,9 @@
 ![Wireframe](https://i.imgur.com/lhgoBFT.png))
 
 ## Check List :chart:
-- README & Wireframe/planning 
-- Working webapp using CRUD SQL commands with local DB
-- Website deployed using fly.io
+- README & Wireframe/planning :chart:
+- Working webapp using CRUD SQL commands with local DB :chart:
+- Website deployed using fly.io :chart:
 - IGDB/Twitch API authentication working
 - Add new game button replaced with API search and store in DB
 
@@ -36,6 +36,10 @@
 - Puma
 
 ## Lessons Learnt :clipboard:
-- To be continued
+- Don't add logged_in? check until the end of the project.
+- Most of my bugs were due to human error/minor typo's. Take breaks, check lines carefully. 
 
 ## Future Features :crystal_ball:
+- Twitch/IGDB API. Will attempt this over the next few weeks.
+- May test a different host for practice.
+- CSS improvement
