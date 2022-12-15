@@ -150,3 +150,37 @@ input {
     display: flex;
     align-items: flex-start;
 }
+
+.addreviewpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+.addreviewpage button {
+    width: 100px;
+}
+
+.reviewtext {
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 5%;
+    width: 50%;
+}
+
+.reviewnew {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.reviewnew button {
+    margin-top: 5%;
+}
+
+.reviewnew form {
+    width: 50%;
+}

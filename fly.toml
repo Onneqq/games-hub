@@ -1,4 +1,4 @@
-# fly.toml file generated for game-hub on 2022-12-15T10:38:59+11:00
+# fly.toml file generated for game-hub on 2022-12-16T10:06:08+11:00
 
 app = "game-hub"
 kill_signal = "SIGINT"
