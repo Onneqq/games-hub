@@ -10,11 +10,13 @@ enable :sessions
 # models
 require './models/game'
 require './models/user'
+require './models/review'
 
 # controllers
 require './controllers/games_controller'
 require './controllers/users_controller'
 require './controllers/sessions_controller'
+require './controllers/reviews_controller'
 
 # helpers
 require './helpers/sessions_helper'
@@ -26,9 +28,3 @@ get '/profile' do
   }
 end
 
-get '/reviews' do
-  games = run_sql('SELECT * FROM games')
-  erb :reviews, locals: {
-    games: games
-  }
-end

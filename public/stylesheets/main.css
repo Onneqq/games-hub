@@ -92,6 +92,15 @@ h1 {
 }
 
 h2 {
+    margin-bottom: 5px;
+}
 
+.game p {
+    margin-top: 5px;
+}
+
+.game {
+    border: 2px solid white;
+    border-radius: 0.4rem;
 }
 

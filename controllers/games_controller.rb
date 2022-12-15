@@ -1,8 +1,19 @@
 get '/' do
     games = all_games()
+    likes = all_likes()
+    gameslikes = []
+    games.each do |game|
+        ourlike = likes.find{|i| i['game_id'] == game['id']} 
+        if (ourlike != NIL)
+            game['likes'] = ourlike['number_of_likes'].to_i
+        else
+            game['likes'] = 0
+        end
+        gameslikes.push(game)
+    end
 
     erb :index, locals: {
-      games: games
+        games: gameslikes.sort_by{|i| i['likes']}.reverse()
     }
 end
 
@@ -73,7 +84,9 @@ end
 
 post '/games/:id/likes' do
     game_id = params['id']
-    user_id = params['user_id']
-
-    run_sql('INSERT INTO likes(user_id, game_id)')
+    user_id = session['user_id']
+    puts game_id
+    puts user_id
+    run_sql("INSERT INTO likes(user_id, game_id) VALUES($1, $2)", [user_id, game_id])
+    redirect '/'
 end

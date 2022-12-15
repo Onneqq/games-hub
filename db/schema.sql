@@ -33,3 +33,15 @@ CREATE TABLE likes(
 ALTER TABLE likes
 ADD CONSTRAINT unique_likes
 UNIQUE(user_id, game_id);
+
+
+-- Testing
+
+-- lists games in order of number of likes
+  SELECT
+  game_id,
+  COUNT(*) AS number_of_likes
+  FROM likes
+  GROUP BY game_id
+  ORDER BY number_of_likes DESC;
+

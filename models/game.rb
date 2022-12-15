@@ -17,3 +17,13 @@ end
 def delete_game(id)
     run_sql('DELETE FROM games WHERE id = $1', [id])
 end
+
+def all_likes()
+    run_sql("SELECT
+        game_id,
+        COUNT(*) AS number_of_likes
+        FROM likes
+        GROUP BY game_id
+        ORDER BY number_of_likes DESC;
+      ")
+end
