@@ -70,3 +70,10 @@ delete '/games/:id' do
 
     redirect '/'
 end
+
+post '/games/:id/likes' do
+    game_id = params['id']
+    user_id = params['user_id']
+
+    run_sql('INSERT INTO likes(user_id, game_id)')
+end

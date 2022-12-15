@@ -37,6 +37,9 @@
               </section>
             </header>
             <img src="<%= game['image_url'] %>" alt="">
+            <form action="/games/<%= game['id'] %>/likes" method="POST">
+              <button>Like</button>
+            </form>
           </div>
         <% end %>
       </div>
