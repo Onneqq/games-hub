@@ -1,5 +1,5 @@
 # Games Hub :space_invader:
-[Click Link to View!](https://game-hub.fly.dev/)
+Not currently hosted
 
 ## About :book:
 - Hub for searching for information on games. 
